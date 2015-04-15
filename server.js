@@ -7,11 +7,11 @@ var app = express();
 var path = require('path');
 
 // root dir to route all files
-app.use('/', express.static(_dirname+ '/'));
+app.use('/', express.static(__dirname+ '/'));
 
 // init index.html
 app.get('/', function(req, res) {
-	res.sendFile(path.join(_dirname + '/index.html'));
+	res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 var server = app.listen(8888, function() {
